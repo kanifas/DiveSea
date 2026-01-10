@@ -4,6 +4,7 @@ import styles from './Font.module.scss'
 interface IProps {
   family?: TFontFamily
   weight?: TFontWeight
+  uppercase?: boolean
   children: ReactNode
 }
 

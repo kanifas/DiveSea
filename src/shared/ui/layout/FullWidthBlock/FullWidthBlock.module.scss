@@ -1,0 +1,13 @@
+.container {
+  /* Родительский контейнер для центрирования всего содержимого */
+  display: flex;
+  justify-content: center; /* Центрирует по горизонтали */
+  margin: 0;
+  padding: 0;
+}
+
+.content {
+  /* на всю ширину родительского контейнера */
+  width: 100%; /* Занимает всю ширину .container */
+  box-sizing: border-box;
+}

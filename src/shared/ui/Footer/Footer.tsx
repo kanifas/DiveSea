@@ -1,8 +1,11 @@
-import React from 'react'
+import { Logo } from '@/shared/ui'
+import styles from './Footer.module.scss'
 
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <div>
+      <Logo invert />
+    </div>
   )
 }
 

@@ -1,0 +1,33 @@
+@use '../../styles/variables' as v;
+
+.container {
+  /* Родительский контейнер для центрирования всего содержимого */
+  display: flex;
+  justify-content: center; /* Центрирует по горизонтали */
+  margin: 0;
+  padding: 0;
+}
+
+.content {
+  /* Основная центрируемая область (центральная колонка) */
+  width: 100%;
+  max-width: v.$max-layout-centered-width;
+  margin: 0 auto;
+  padding-left: 8vw;
+  padding-right: 8vw;
+  box-sizing: border-box;
+}
+
+@media (width >= v.$breakpoint-tablet) {
+  .content {
+    padding-left: 6.6vw;
+    padding-right: 6.6vw;
+  }
+}
+
+@media (width >= v.$breakpoint-desktop) {
+  .content {
+    padding-left: 81px;
+    padding-right: 81px;
+  }
+}

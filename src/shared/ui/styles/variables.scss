@@ -1,0 +1,14 @@
+$min-layout-centered-width: 315px;
+$max-layout-centered-width: 1408px /* 81px + 1246px + 81px */;
+
+/* Mobile first */
+$breakpoint-mobile: 320px; /* 320..1024 */
+$breakpoint-tablet: 600px; /* 1025..1280 */
+$breakpoint-desktop: 1246px; /* 1281..more */
+
+@media (min-width:320px)  { /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ }
+@media (min-width:480px)  { /* smartphones, Android phones, landscape iPhone */ }
+@media (min-width:600px)  { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ }
+@media (min-width:801px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
+@media (min-width:1281px) { /* hi-res laptops and desktops */ }

@@ -1,3 +1,2 @@
 import './fonts.css'
-import './variables.css'
-import './globals.css'
+import './global.css'

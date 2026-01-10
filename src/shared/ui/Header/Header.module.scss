@@ -1,0 +1,34 @@
+@use '../styles/variables' as v;
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav {
+  margin-right: auto;
+  display: flex;
+  text-transform: uppercase;
+  gap: 50px;
+
+  a {
+    color: #606060
+  }
+}
+
+@media (width >= v.$breakpoint-tablet) {
+  .nav {
+    font-size: 0.875rem;
+    margin-left: 2.5rem;
+    gap: 2rem;
+  }
+}
+
+@media (width >= v.$breakpoint-desktop) {
+  .nav {
+    font-size: 1.125rem;
+    margin-left: 4.125rem;
+    gap: 3.125rem;
+  }
+}
