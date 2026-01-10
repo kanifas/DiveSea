@@ -1,0 +1,24 @@
+@use '@/shared/ui/styles/variables.scss' as v;
+
+.root {
+  display: flex;
+  gap: 0.625rem;
+
+  @media (width >= v.$breakpoint-tablet) {
+    gap: 1.75rem;
+  }
+
+  svg {
+    path {
+      fill: #535353;
+    }
+  }
+
+  a:hover, a:active, a:focus {
+    svg {
+      path {
+        fill: #fff;
+      }
+    }
+  }
+}
