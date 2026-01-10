@@ -9,6 +9,7 @@
 .nav {
   margin-right: auto;
   display: flex;
+  flex-direction: column;
   text-transform: uppercase;
   gap: 50px;
 
@@ -19,14 +20,20 @@
 
 @media (width >= v.$breakpoint-tablet) {
   .nav {
+    flex-direction: row;
     font-size: 0.875rem;
     margin-left: 2.5rem;
     gap: 2rem;
+  }
+
+  .burger {
+    display: none;
   }
 }
 
 @media (width >= v.$breakpoint-desktop) {
   .nav {
+    flex-direction: row;
     font-size: 1.125rem;
     margin-left: 4.125rem;
     gap: 3.125rem;

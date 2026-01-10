@@ -1,4 +1,4 @@
-import { Font, Logo } from '@/shared/ui'
+import { Burger, Font, Logo } from '@/shared/ui'
 import styles from './Header.module.scss'
 
 const Header = () => {
@@ -11,19 +11,24 @@ const Header = () => {
           <Font family='Inter'>
             <a href="#">Discover</a>
           </Font>
-          <Font>
+          <Font family='Inter'>
             <a href="#">Creators</a>
           </Font>
-          <Font>
+          <Font family='Inter'>
             <a href="#">Sell</a>
           </Font>
-          <Font>
+          <Font family='Inter'>
             <a href="#">Stats</a>
           </Font>
         </nav>
 
-        <button style={{color:'#fff'}}>Connect Wallet</button>
+        <div className={styles.connectWallet}>
+          <button style={{color:'#fff'}}>Connect Wallet</button>
+        </div>
 
+        <div className={styles.burger}>
+          <Burger />
+        </div>
       </div>
     </div>
   )

@@ -6,10 +6,9 @@ const transition: Transition = {
     repeat: 0,
     repeatType: "reverse",
     ease: "easeOut",
-
 }
 
-export default function MotionPath() {
+export default function Spiral() {
     return (
         <div style={{ position: "relative", display:"block", width:112, height:82  }}>
           <svg   xmlns="http://www.w3.org/2000/svg" width="110" height="80">

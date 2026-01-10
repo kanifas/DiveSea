@@ -1,0 +1,73 @@
+@use '@/shared/ui/styles/variables.scss' as v;
+
+.root {
+  position: relative;
+  color: #999;
+  font-size: 0.875rem;
+
+  a {
+    color: #B9B9B9;
+  }
+}
+
+.topSection {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  @media (width >= v.$breakpoint-tablet) {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.subSection {
+  text-align: center;
+  padding-top: 1.625rem;
+  border-top: 1px solid #818181;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (width >= v.$breakpoint-tablet) {
+    border-top-color: rgba(129,129,129,0.25);
+    justify-content: space-between;
+
+    .copyrightSubtext {
+      display: none;
+    }
+  }
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1.875rem;
+  text-transform: uppercase;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+
+
+  @media (width >= v.$breakpoint-tablet) {
+    flex-direction: row;
+    gap: 3.125rem;
+    font-size: 0.7925rem;
+    padding: 0;
+  }
+
+  @media (width >= v.$breakpoint-desktop) {
+    flex-direction: row;
+    gap: 4.375rem;
+    font-size: 1.114rem;
+  }
+}
+
+.socials {
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  @media (width >= v.$breakpoint-tablet) {
+    position: static;
+  }
+}
