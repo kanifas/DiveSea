@@ -1,0 +1,39 @@
+@use '@/shared/ui/styles/variables.scss' as v;
+
+.root {
+  background: #f1f1f1;
+  padding: 3.125rem 0;
+
+  h2 {
+    margin: 0;
+    margin-bottom: 3.125rem;
+    line-height: 1;
+    color: #C5C5C5;
+    font-size: 1.875rem;
+    text-align: center;
+  }
+
+  @media (width >= v.$breakpoint-tablet) {
+    padding: 3.125rem 0;
+    h2 {
+      font-size: 2rem;
+    }
+  }
+  @media (width >= v.$breakpoint-desktop) {
+    padding: 4.375rem 0;
+    h2 {
+      font-size: 2.875rem;
+      margin-bottom: 4.375rem;
+    }
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 32px;
+    @media (width >= v.$breakpoint-desktop) {
+      gap: 40px;
+    }
+  }
+}

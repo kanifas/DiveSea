@@ -1,0 +1,16 @@
+@use '@/shared/ui/styles/variables.scss' as v;
+
+.root {
+  padding-top: 4.5rem;
+  padding-bottom: 7.5rem;
+
+  @media (width >= v.$breakpoint-tablet) {
+    padding-top: 4.5rem;
+    padding-bottom: 7.5rem;
+  }
+
+  @media (width >= v.$breakpoint-desktop) {
+    padding-top: 4.5rem;
+    padding-bottom: 7.5rem;
+  }
+}

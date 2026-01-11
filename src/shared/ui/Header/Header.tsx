@@ -9,16 +9,16 @@ const Header = () => {
 
         <nav className={styles.nav}>
           <Font family='Inter'>
-            <a href="#">Discover</a>
+            <a href="/discover">Discover</a>
           </Font>
           <Font family='Inter'>
-            <a href="#">Creators</a>
+            <a href="/creators">Creators</a>
           </Font>
           <Font family='Inter'>
-            <a href="#">Sell</a>
+            <a href="/sell">Sell</a>
           </Font>
           <Font family='Inter'>
-            <a href="#">Stats</a>
+            <a href="/stats">Stats</a>
           </Font>
         </nav>
 

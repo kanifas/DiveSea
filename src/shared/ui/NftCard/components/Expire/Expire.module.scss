@@ -1,0 +1,23 @@
+@use '@/shared/ui/styles/variables.scss' as v;
+
+.root {
+  line-height: 1;
+  font-size: 11px;
+  color: #fff;
+  background: rgba(28, 29, 32, 0.35);
+  box-shadow: 0px 3.52878px 10.5863px rgba(28, 29, 32, 0.08);
+  border: 1px solid #858586;
+  border: 1px solid rgba(28, 29, 32, 0.08);
+  border-radius: 8px;
+  backdrop-filter: blur(1.76439px);
+
+  padding: 7px 10px;
+  // box-sizing: border-box;
+
+  @media (width >= v.$breakpoint-desktop) {
+    font-size: 14px;
+    padding: 10px 14px;
+    border-radius: 10px;
+  }
+}
+

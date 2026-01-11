@@ -1,0 +1,67 @@
+@use '@/shared/ui/styles/variables.scss' as v;
+
+.root {
+  display: flex;
+  gap: 62px;
+  padding: 15px 21px;
+  background: #FCFCFD;
+  border-radius: 13px;
+  position: relative;
+  box-shadow: 0px 43.1169px 34.4935px -25.8701px rgba(15, 15, 15, 0.22);
+
+  * {
+    display: block;
+  }
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  @media (width >= v.$breakpoint-desktop) {
+    border-radius: 17px;
+    padding: 20px 28px;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .prev, .next {
+    position: relative;
+    z-index: 3;
+  }
+}
+
+.root::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  border-radius: 17px;
+  background: #fff;
+  box-shadow: 0px 43.1169px 34.4935px -25.8701px rgba(15, 15, 15, 0.22);
+  mix-blend-mode: multiply;
+}
+
+.root::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -1px;
+  margin-top: -9px;
+  width: 2px;
+  border-radius: 1px;
+  background: #E6E8EC;
+  height: 18px;
+
+  @media (width >= v.$breakpoint-desktop) {
+    height: 24px;
+    margin-top: -12px;
+  }
+}

@@ -1,0 +1,18 @@
+@use '@/shared/ui/styles/variables.scss' as v;
+
+.root {
+
+}
+
+.container {
+
+}
+
+.navigator {
+  max-width: fit-content;
+  margin-inline: auto;
+  margin-top: 3.125rem;
+  @media (width >= v.$breakpoint-desktop) {
+    margin-top: 4.375rem;
+  }
+}

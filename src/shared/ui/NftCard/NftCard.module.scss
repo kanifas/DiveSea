@@ -1,0 +1,105 @@
+@use '@/shared/ui/styles/variables.scss' as v;
+
+.root {
+  padding: 10px;
+  min-width: 210px;
+  width: 210px;
+  background: #fff;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+  box-sizing: border-box;
+  box-shadow: 38px 12px 60px rgba(199, 199, 199, 0.6);
+
+  .image {
+    overflow: hidden;
+    height: 190px;
+    border-radius: 24px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  @media (width >= v.$breakpoint-desktop) {
+    min-width: 280px;
+    width: 280px;
+    padding: 14px;
+    border-radius: 24px;
+    gap: 20px;
+
+    .image {
+      height: 253px;
+    }
+  }
+
+  .name {
+    color: #363638;
+    font-size: 1rem;
+    line-height: 1.125rem;
+    margin-bottom: auto;
+    @media (width >= v.$breakpoint-desktop) {
+      font-size: 1.375rem;
+      line-height: 1;
+    }
+  }
+
+  .expire {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 3;
+    @media (width >= v.$breakpoint-desktop) {
+      right: 25px;
+      top: 28px;
+    }
+  }
+
+  .bidSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .bidInfo {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      line-height: 1;
+      gap: 3px;
+
+      .bidCaption {
+        font-size: 0.6875rem;
+        color: #94a3b8;
+        @media (width >= v.$breakpoint-desktop) {
+          font-size: 0.875rem;
+        }
+      }
+
+      .bidValue {
+        font-size: 0.75rem;
+        @media (width >= v.$breakpoint-desktop) {
+          font-size: 1.03rem;
+        }
+        > * {
+          display: inline-block;
+          vertical-align: middle;
+        }
+        svg {
+          margin-right: 4px;
+          vertical-align: top;
+        }
+      }
+    }
+
+    .bidButton {
+      font-size: 0.6875rem;
+      @media (width >= v.$breakpoint-desktop) {
+        font-size: 0.875rem;
+      }
+    }
+  }
+}
