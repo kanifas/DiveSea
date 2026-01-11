@@ -38,7 +38,7 @@ const Font:FC<IProps> = ({
   const className = `${fontFamilyClass} ${fontWeightClass}`
 
   return (
-    <span className={className}>{children}</span>
+    <span className={className} style={{lineHeight: 'inherit'}}>{children}</span>
   )
 }
 
@@ -47,21 +47,21 @@ export const FontFamily = {
   Inter: 'Inter',
   Poppins: 'Poppins',
   Outfit: 'Outfit',
-  PublicSans: 'Public Sans',
+  PublicSans: 'PublicSans',
 } as const // 'as const' ensures type safety and immutability
 
 export type TFontFamily = (typeof FontFamily)[keyof typeof FontFamily]
 
 export const FontWeight = {
   Thin: 'Thin',
-  ExtraLight: 'Extra Light',
+  ExtraLight: 'ExtraLight',
   Light: 'Light',
   Normal: 'Normal',
   Regular: 'Regular',
   Medium: 'Medium',
-  SemiBold: 'Semi Bold',
+  SemiBold: 'SemiBold',
   Bold: 'Bold',
-  ExtraBold: 'Extra Bold',
+  ExtraBold: 'ExtraBold',
   Black: 'Black'
 } as const
 

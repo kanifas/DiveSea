@@ -1,0 +1,99 @@
+@use '@/shared/ui/styles/variables.scss' as v;
+
+.root {
+  padding-top: 4.375rem;
+  padding-bottom: 4.375rem;
+  @media (width >= v.$breakpoint-tablet) {
+    padding-top: 5.625rem;
+    padding-bottom: 5.625rem;
+  }
+  @media (width >= v.$breakpoint-desktop) {
+    padding-top: 7.5rem;
+    padding-bottom: 7.5rem;
+  }
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #141416;
+  border-radius: 15px;
+  padding: 22px;
+
+  @media (width >= v.$breakpoint-tablet) {
+    display: block;
+    border-radius: 22px;
+    padding: 22px;
+  }
+  @media (width >= v.$breakpoint-desktop) {
+    display: block;
+    border-radius: 30px;
+    padding: 32px;
+  }
+
+  h2 {
+    margin: 0;
+    line-height: 1;
+    font-size: 1.5rem;
+    color: #fff;
+    @media (width >= v.$breakpoint-tablet) {
+      font-size: 2.11rem;
+    }
+    @media (width >= v.$breakpoint-desktop) {
+      font-size: 2.81rem;
+    }
+  }
+
+  h3 {
+    color: #888;
+    font-size: 0.625rem;
+    @media (width >= v.$breakpoint-tablet) {
+      font-size: 0.9375rem;
+    }
+    @media (width >= v.$breakpoint-desktop) {
+      font-size: 1.25rem;
+    }
+  }
+}
+
+.infoSection {
+  // align-self: flex-start;
+  // display: flex;
+  // flex-direction: column;
+  text-align: center;
+  @media (width >= v.$breakpoint-tablet) {
+    text-align: left;
+  }
+}
+
+.imageBox {
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 9px;
+  }
+  @media (width >= v.$breakpoint-tablet) {
+    position: absolute;
+    top: 22px;
+    right: 22px;
+    bottom: 22px;
+    img {
+      height: 100%;
+      width: auto;
+      border-radius: 11px;
+    }
+  }
+  @media (width >= v.$breakpoint-desktop) {
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    bottom: 32px;
+    img {
+      height: 100%;
+      width: auto;
+      border-radius: 15px;
+    }
+  }
+}
