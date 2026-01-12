@@ -1,5 +1,5 @@
 import Spiral from './ui/Spiral/Spiral'
-import { Font } from '@/shared/ui'
+import { Button, Font } from '@/shared/ui'
 import styles from './ui/styles/DiscoverAndCreateNFT.module.scss'
 
 const DiscoverAndCreateNFT = () => {
@@ -23,8 +23,16 @@ const DiscoverAndCreateNFT = () => {
             </Font>
           </h3>
           <div className={styles.buttons}>
-            <button>EXPLORE MORE</button>
-            <button>CREATE NFT</button>
+            <Button>
+              <Font family='Poppins' weight='Medium'>
+                EXPLORE MORE
+              </Font>
+            </Button>
+            <Button outlined>
+              <Font family='Poppins' weight='Medium'>
+                CREATE NFT
+              </Font>
+            </Button>
           </div>
           <div className={styles.stats}>
             <div>

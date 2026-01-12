@@ -66,6 +66,19 @@
   @media (width >= v.$breakpoint-tablet) {
     text-align: left;
   }
+
+  .buttons {
+    display: flex;
+    gap: 0.875rem;
+
+    @media (width >= v.$breakpoint-tablet) {
+      gap: 1.125rem;
+    }
+
+    @media (width >= v.$breakpoint-tablet) {
+      gap: 1.5rem;
+    }
+  }
 }
 
 .imageBox {

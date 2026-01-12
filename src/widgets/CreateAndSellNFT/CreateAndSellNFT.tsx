@@ -1,4 +1,4 @@
-import { Font } from '@/shared/ui'
+import { Button, Font } from '@/shared/ui'
 import image from './ui/images/im1.jpg'
 import styles from './ui/styles/CreateAndSellNFT.module.scss'
 const CreateAndSellNFT = () => {
@@ -11,8 +11,16 @@ const CreateAndSellNFT = () => {
             <h3><Font family='Poppins' weight='Medium'>World’s Largest NFT Place</Font></h3>
           </div>
           <div className={styles.buttons}>
-            <button style={{color:'#fff'}}>Explore More</button>
-            <button style={{color:'#fff'}}>Sell Artwork</button>
+            <Button invert uppercase={false}>
+              <Font family='Outfit' weight='SemiBold'>
+                Explore More
+              </Font>
+            </Button>
+            <Button invert outlined uppercase={false}>
+              <Font family='Outfit' weight='SemiBold'>
+                Sell Artwork
+              </Font>
+            </Button>
           </div>
         </div>
 
