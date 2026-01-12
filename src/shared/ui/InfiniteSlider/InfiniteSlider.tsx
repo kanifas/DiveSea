@@ -15,7 +15,7 @@ import {
   useEffect
 } from 'react'
 
-import horizontalLoop from './helpers/horizontalLoop'
+import horizontalLoop from './helpers/horizontalLoop.js'
 
 import styles from './InfiniteSlider.module.scss'
 
@@ -31,19 +31,11 @@ let activeElement:HTMLElement
 let isMounted = false
 
 const InfiniteSlider:FC<IProps> = ({ children }) => {
-
-  // const container = useRef(); // Create a ref for the container
-
-  // useGSAP(() => {
-  //   // GSAP animation code goes here
-  //   gsap.to('.box', { rotation: 180, duration: 1 }); // Animate elements within the container
-  // }, { scope: container }); // Scope selectors to this container
-
   const containerRef = useRef<HTMLDivElement>(null)
   const prevRef = useRef<HTMLDivElement>(null)
   const nextRef = useRef<HTMLDivElement>(null)
-  // const childRefs = useRef([])
 
+  // const childRefs = useRef([])
   // Function to get valid React elements and assign refs
   // const childrenWithRefs = Children.map(children, (child, index) => {
   //   // Only process valid React elements (ignores null, strings, etc. if not wrapped)

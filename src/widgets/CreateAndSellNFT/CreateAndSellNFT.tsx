@@ -1,6 +1,7 @@
 import { Button, Font } from '@/shared/ui'
 import image from './ui/images/im1.jpg'
 import styles from './ui/styles/CreateAndSellNFT.module.scss'
+
 const CreateAndSellNFT = () => {
   return (
     <div className={styles.root}>

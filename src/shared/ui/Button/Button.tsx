@@ -6,7 +6,7 @@ interface IProps {
   children: ReactNode,
   outlined?: boolean
   invert?: boolean
-  uppercase?: boolean
+  uppercase?: boolean,
 }
 
 const Button:FC<IProps> = ({

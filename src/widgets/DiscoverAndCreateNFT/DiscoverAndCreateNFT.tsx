@@ -1,8 +1,55 @@
+import gsap from 'gsap'
+import { useGSAP } from '@gsap/react'
+gsap.registerPlugin(useGSAP)
+
+import { useState } from 'react'
 import Spiral from './ui/Spiral/Spiral'
 import { Button, Font } from '@/shared/ui'
 import styles from './ui/styles/DiscoverAndCreateNFT.module.scss'
 
 const DiscoverAndCreateNFT = () => {
+  const [isShowSpiral, setIsShowSpiral] = useState(false)
+
+  useGSAP(() => {
+    gsap.fromTo(`.${styles.infoSection} h2`,
+      { position: 'relative', top: -50, opacity: 0 },
+      { top: 0, opacity: 1, duration: 0.6, delay: 0.3 }
+    )
+
+    gsap.fromTo(`.${styles.infoSection} h3`,
+      { position: 'relative', top: 50, opacity: 0 },
+      { top: 0, opacity: 1, duration: 0.6, delay: 0.5 }
+    )
+
+    gsap.fromTo(`.${styles.buttons} > :nth-child(1)`,
+      { opacity: 0, scale: 0.8 },
+      { opacity: 1, scale: 1, duration: 0.4 , delay: 0.8 }
+    )
+
+    gsap.fromTo(`.${styles.buttons} > :nth-child(2)`,
+      { opacity: 0, scale: 0.8 },
+      { opacity: 1, scale: 1, duration: 0.4 , delay: 1 }
+    )
+
+    gsap.fromTo(`.${styles.stats}`,
+      { position: 'relative', top: 50, opacity: 0 },
+      { top: 0, opacity: 1, duration: 0.6, delay: 1.5 }
+    )
+
+    gsap.fromTo(`.${styles.mainCaption}`,
+      { position: 'relative', left: 200, opacity: 0 },
+      { left: 0, opacity: 1, duration: 0.5, delay: 0.8 }
+    )
+
+    gsap.from(`.${styles.grapchicSectionImage1}`,
+      { left: 400, top: -50, opacity: 0, scale: 0.5, duration: 0.6, delay: 0.4 }
+    )
+
+    gsap.from(`.${styles.grapchicSectionImage2}`,
+      { left: 500, top: 200, opacity: 0, scale: 0.5, duration: 0.6, delay: 0.4, onComplete: () => setIsShowSpiral(true)}
+    )
+  }, []);
+
   return (
     <div className={styles.root}>
       <div className={styles.container}>
@@ -51,8 +98,21 @@ const DiscoverAndCreateNFT = () => {
         </div>
 
         <div className={styles.grapchicSection}>
-          <img src="/static/images/im1.jpg" width="350" />
-          <Spiral />
+          <div className={styles.grapchicSectionImage1}>
+            <img src="/static/images/im1.jpg" />
+            <div className={styles.grapchicSectionImage1Shadow}>
+              <img src="/static/images/im1.jpg" />
+            </div>
+          </div>
+          <div className={styles.grapchicSectionImage2}>
+            <img src="/static/images/im2.jpg" />
+            <div className={styles.grapchicSectionImage2Shadow}>
+              <img src="/static/images/im2.jpg" />
+            </div>
+          </div>
+          <div className={styles.grapchicSectionSpiral}>
+            {isShowSpiral && <Spiral />}
+          </div>
         </div>
       </div>
     </div>
