@@ -61,6 +61,7 @@
     .buttons {
       display: flex;
       gap: 1.0625rem;
+      justify-content: center;
     }
 
     .stats {
@@ -112,6 +113,7 @@
 
         .buttons {
           gap: 1rem;
+          justify-content: start;
         }
 
         .stats {
@@ -190,6 +192,7 @@
 
         .buttons {
           gap: 1.375rem;
+          justify-content: start;
         }
 
         .stats {

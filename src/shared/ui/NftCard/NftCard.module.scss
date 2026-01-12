@@ -1,17 +1,37 @@
 @use '@/shared/ui/styles/variables.scss' as v;
 
 .root {
-  padding: 10px;
-  min-width: 210px;
-  width: 210px;
-  background: #fff;
-  border-radius: 18px;
+  width: 240px;
+  min-width: 240px;
   display: flex;
-  flex-direction: column;
-  gap: 14px;
-  position: relative;
-  box-sizing: border-box;
-  box-shadow: 38px 12px 60px rgba(199, 199, 199, 0.6);
+  justify-content: center;
+
+  @media (width >= v.$breakpoint-desktop) {
+    min-width: 300px;
+    width: 300px;
+  }
+
+  .card {
+    padding: 10px;
+    min-width: 210px;
+    width: 210px;
+    background: #fff;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    position: relative;
+    box-sizing: border-box;
+    box-shadow: 38px 12px 60px rgba(199, 199, 199, 0.6);
+
+    @media (width >= v.$breakpoint-desktop) {
+      padding: 14px;
+      min-width: 280px;
+      width: 280px;
+      border-radius: 24px;
+      gap: 20px;
+    }
+  }
 
   .image {
     overflow: hidden;
@@ -23,19 +43,13 @@
       height: 100%;
       object-fit: cover;
     }
-  }
 
-  @media (width >= v.$breakpoint-desktop) {
-    min-width: 280px;
-    width: 280px;
-    padding: 14px;
-    border-radius: 24px;
-    gap: 20px;
-
-    .image {
+    @media (width >= v.$breakpoint-desktop) {
       height: 253px;
     }
   }
+
+
 
   .name {
     color: #363638;

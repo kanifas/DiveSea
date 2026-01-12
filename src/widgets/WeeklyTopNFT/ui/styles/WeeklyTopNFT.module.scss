@@ -26,14 +26,4 @@
       margin-bottom: 4.375rem;
     }
   }
-
-  .container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: nowrap;
-    gap: 32px;
-    @media (width >= v.$breakpoint-desktop) {
-      gap: 40px;
-    }
-  }
 }

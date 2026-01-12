@@ -1,4 +1,4 @@
-import { Burger, Font, Logo } from '@/shared/ui'
+import { Burger, Button, Font, Logo } from '@/shared/ui'
 import styles from './Header.module.scss'
 
 const Header = () => {
@@ -23,7 +23,11 @@ const Header = () => {
         </nav>
 
         <div className={styles.connectWallet}>
-          <button style={{color:'#fff'}}>Connect Wallet</button>
+          <Button>
+            <Font family='Inter' weight='Medium'>
+              Connect Wallet
+            </Font>
+          </Button>
         </div>
 
         <div className={styles.burger}>

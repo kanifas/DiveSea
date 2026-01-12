@@ -69,14 +69,17 @@
 
   .buttons {
     display: flex;
+    justify-content: center;
     gap: 0.875rem;
 
     @media (width >= v.$breakpoint-tablet) {
       gap: 1.125rem;
+      justify-content: left;
     }
 
     @media (width >= v.$breakpoint-tablet) {
       gap: 1.5rem;
+      justify-content: left;
     }
   }
 }

@@ -18,6 +18,10 @@
   }
 }
 
+.connectWallet {
+  display: none;
+}
+
 @media (width >= v.$breakpoint-tablet) {
   .nav {
     flex-direction: row;
@@ -29,6 +33,10 @@
   .burger {
     display: none;
   }
+
+  .connectWallet {
+    display: block;
+  }
 }
 
 @media (width >= v.$breakpoint-desktop) {
@@ -37,5 +45,9 @@
     font-size: 1.125rem;
     margin-left: 4.125rem;
     gap: 3.125rem;
+  }
+
+  .connectWallet {
+     display: block;
   }
 }
