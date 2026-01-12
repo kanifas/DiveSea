@@ -2,15 +2,212 @@
 
 .root {
   padding-top: 4.5rem;
-  padding-bottom: 7.5rem;
+  padding-bottom: 8.25rem;
+
+  h2 {
+    margin: 0;
+    font-size: 3rem;
+    line-height: 3.375rem;
+    color: #141416;
+    margin-bottom: 1rem;
+    letter-spacing: -2px;
+  }
+
+  h3 {
+    margin: 0;
+    font-size: 0.6875rem;
+    line-height: 1.15rem;
+    max-width: 512px;
+    margin-bottom: 2.5rem;
+
+    b {
+      color: #141416;
+    }
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 105px;
+    text-align: center;
+
+    .infoSection {
+      .mainCaption {
+        font-size: 0.625rem;
+        line-height: 1;
+        color: #8d8c8c;
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
+        letter-spacing: 1px;
+
+        * {
+          line-height: 1
+        }
+
+        &::before {
+          content: '';
+          display: inline-block;
+          height: 1px;
+          background: #8d8c8c;
+          margin-right: 8px;
+          vertical-align: middle;
+          width: 2.1rem;
+          position: relative;
+          top: -  1px;
+        }
+      }
+    }
+
+    .stats {
+      display: none;
+    }
+  }
 
   @media (width >= v.$breakpoint-tablet) {
-    padding-top: 4.5rem;
-    padding-bottom: 7.5rem;
+    padding-top: 3.9375rem;
+    padding-bottom: 7.125rem;
+
+    h2 {
+      font-size: 3.375rem;
+      line-height: 3.875rem;
+      margin-bottom: 0.9375rem;
+      letter-spacing: -2px;
+    }
+
+    h3 {
+      font-size: 0.8125rem;
+      line-height: 1.125rem;
+      margin-bottom: 2.25rem;
+    }
+
+    .container {
+      flex-direction: row;
+      gap: 10px;
+      text-align: left;
+
+      .infoSection {
+        width: 50%;
+        min-width: 375px;
+
+        .mainCaption {
+          margin-bottom: 0.5rem;
+          * {
+            display: none;
+          }
+          &::before {
+            content: '';
+            height: 1px;
+            background: #201F1F;
+            opacity: 0.2;
+            margin-right: 8px;
+            vertical-align: middle;
+            width: 8.625rem;
+          }
+        }
+
+        .stats {
+          margin-top: 3.625rem;
+          display: flex;
+          gap: 2.5rem;
+          line-height: 1;
+
+          > div {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+          }
+
+          .value {
+            font-size: 1.625rem;
+            line-height: 1.875rem;
+            color: #141416;
+          }
+
+          .caption {
+            font-size: 0.5625rem;
+            line-height: 0.81rem;
+            color: #848586;
+          }
+        }
+      }
+
+      .grapchicSection {
+        // width: 50%;
+      }
+    }
   }
 
   @media (width >= v.$breakpoint-desktop) {
-    padding-top: 4.5rem;
-    padding-bottom: 7.5rem;
+    flex-direction: row;
+    padding-top: 6.125rem;
+    padding-bottom: 10.625rem;
+
+    h2 {
+      font-size: 4.75rem;
+      line-height: 5.25rem;
+      margin-bottom: 1.75rem;
+      letter-spacing: -3px;
+    }
+
+    h3 {
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+      margin-bottom: 2.75rem;
+    }
+
+    .container {
+      flex-direction: row;
+      gap: 10px;
+      text-align: left;
+
+      .infoSection {
+        width: 45.5%;
+
+        .mainCaption {
+          margin-bottom: 0.625rem;
+          * {
+            display: none;
+          }
+          &::before {
+            content: '';
+            height: 1px;
+            background: #201F1F;
+            opacity: 0.2;
+            margin-right: 8px;
+            vertical-align: middle;
+            width: 12.1875rem;
+          }
+        }
+
+        .stats {
+          margin-top: 5rem;
+          display: flex;
+          gap: 3.75rem;
+          line-height: 1;
+
+          > div {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+          }
+
+          .value {
+            font-size: 2.25rem;
+            line-height: 2.625rem;
+            color: #141416;
+          }
+
+          .caption {
+            font-size: 0.75rem;
+            line-height: 1rem;
+            color: #848586;
+          }
+        }
+      }
+
+      .grapchicSection {
+        // width: 50%;
+      }
+    }
   }
 }
