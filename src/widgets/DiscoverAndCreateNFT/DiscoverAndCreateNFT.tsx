@@ -66,7 +66,7 @@ const DiscoverAndCreateNFT = () => {
           </h2>
           <h3>
             <Font family='Inter' weight='Regular'>
-              Discover, Create and Sell NFTs On Our NFT Marketplace With Over Thousands Of NFTs And Get a <b>$20 bonus</b>.
+              Discover, Create and Sell NFTs On Our NFT Marketplace<br/>With Over Thousands Of NFTs And Get a <b>$20 bonus</b>.
             </Font>
           </h3>
           <div className={styles.buttons}>
@@ -98,6 +98,7 @@ const DiscoverAndCreateNFT = () => {
         </div>
 
         <div className={styles.grapchicSection}>
+          <div className={styles.grapchicSectionDots}/>
           <div className={styles.grapchicSectionImage1}>
             <img src="/static/images/im1.jpg" />
             <div className={styles.grapchicSectionImage1Shadow}>
