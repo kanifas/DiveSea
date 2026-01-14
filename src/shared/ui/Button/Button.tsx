@@ -1,12 +1,12 @@
 import clsx from 'clsx'
-import type { FC, ReactNode } from 'react'
+import type { FC, HTMLAttributes, ReactNode } from 'react'
 import styles from './Button.module.scss'
 
-interface IProps {
+interface IProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode,
   outlined?: boolean
   invert?: boolean
-  uppercase?: boolean,
+  uppercase?: boolean
 }
 
 const Button:FC<IProps> = ({
@@ -14,6 +14,7 @@ const Button:FC<IProps> = ({
   outlined = false,
   invert = false,
   uppercase = true,
+  ...props
 }) => {
   const className = clsx({
     [styles.button]: true,
@@ -23,7 +24,7 @@ const Button:FC<IProps> = ({
   })
 
   return (
-    <div className={className}>
+    <div className={className} {...props}>
       {children}
     </div>
   )

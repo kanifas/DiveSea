@@ -36,6 +36,10 @@
 
   .connectWallet {
     display: block;
+    font-size: 0.71875rem;
+    > div {
+      padding: 0.6875rem 1rem;
+    }
   }
 }
 
@@ -49,5 +53,9 @@
 
   .connectWallet {
      display: block;
+     font-size: 1rem;
+     > div {
+      padding: 1rem 1.5625rem;
+    }
   }
 }

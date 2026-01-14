@@ -1,7 +1,15 @@
+import { useAppDispatch, useAppSelector, toggleIsNavMenu } from '@/shared/lib/redux/store'
 import { Burger, Button, Font, Logo } from '@/shared/ui'
 import styles from './Header.module.scss'
 
 const Header = () => {
+  const dispatch = useAppDispatch();
+  const isNavMenuOpen = useAppSelector(state => state.ui.isNavMenuOpen)
+
+  const onBurgerClick = () => {
+    dispatch(toggleIsNavMenu())
+  }
+
   return (
     <div className={styles.header}>
       <div className={styles.container}>
@@ -30,7 +38,7 @@ const Header = () => {
           </Button>
         </div>
 
-        <div className={styles.burger}>
+        <div className={styles.burger} onClick={onBurgerClick}>
           <Burger />
         </div>
       </div>
