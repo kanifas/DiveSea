@@ -45,6 +45,10 @@ const DiscoverAndCreateNFT = () => {
       { left: 400, top: -50, opacity: 0, scale: 0.5, duration: 0.6, delay: 0.4 }
     )
 
+    gsap.from(`.${styles.grapchicSectionDots}`,
+      { left: 500, opacity: 0, duration: 0.6, delay: 0.4}
+    )
+
     gsap.from(`.${styles.grapchicSectionImage2}`,
       { left: 500, top: 200, opacity: 0, scale: 0.5, duration: 0.6, delay: 0.4, onComplete: () => setIsShowSpiral(true)}
     )
