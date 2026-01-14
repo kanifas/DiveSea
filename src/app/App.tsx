@@ -12,9 +12,7 @@ function App() {
       <ReduxProvider store={store}>
         <div className={styles.root}>
           <header className={styles.header}>
-            <CenteredBlock>
-              <Header />
-            </CenteredBlock>
+            <Header />
           </header>
 
           <main className={styles.main}>

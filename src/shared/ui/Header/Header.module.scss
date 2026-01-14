@@ -1,5 +1,11 @@
 @use '../styles/variables' as v;
 
+.root {
+  .containerWrapper {
+    transition: all 0.2s ease-in-out;
+  }
+}
+
 .container {
   display: flex;
   align-items: center;
@@ -8,13 +14,18 @@
 
 .nav {
   margin-right: auto;
-  display: flex;
-  flex-direction: column;
+  display: none;
   text-transform: uppercase;
   gap: 50px;
 
   a {
     color: #606060
+  }
+
+  &.navOpen {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
   }
 }
 
@@ -23,7 +34,36 @@
 }
 
 @media (width >= v.$breakpoint-tablet) {
+  .root {
+    height: 5.5625rem;
+    position: relative;
+
+    .containerWrapper {
+      position: absolute;
+      left: 0;
+      bottom: 1.0625rem;
+      width: 100%;
+    }
+
+    &.sticky {
+      .containerWrapper {
+        padding-top: 1.0625rem;
+        padding-bottom: 1.0625rem;
+        bottom: auto;
+        box-shadow: 0 0 30px rgba(120,120,120,0.2);
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        background: #fff;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 100;
+      }
+    }
+  }
+
   .nav {
+    display: flex;
     flex-direction: row;
     font-size: 0.875rem;
     margin-left: 2.5rem;
@@ -44,7 +84,12 @@
 }
 
 @media (width >= v.$breakpoint-desktop) {
+  .root {
+    height: 7.25rem
+  }
+
   .nav {
+    display: flex;
     flex-direction: row;
     font-size: 1.125rem;
     margin-left: 4.125rem;
