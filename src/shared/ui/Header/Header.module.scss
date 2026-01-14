@@ -1,9 +1,66 @@
 @use '../styles/variables' as v;
 
 .root {
+  background: #f9f9f9;
+  position: relative;
+  z-index: 100;
+  height: 6.625rem; /* 106px Mobile */
+
   .containerWrapper {
-    transition: all 0.2s ease-in-out;
+    position: relative;
+    padding-top: 30px;
+    transition: all 0.2s linear;
   }
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 1.875rem;
+    right: 1.875rem;
+    height: 1px;
+    bottom: 0;
+    background: #CBCBCB;
+  }
+
+  &.navOpen {
+    .nav {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      left: 1.875rem;
+      top: 150px;
+      font-size: 2.5rem;
+      gap: 1.25rem;
+    }
+
+    .connectWallet {
+      display: block;
+      position: absolute;
+      bottom: 40px;
+      left: 1.875rem;
+      right: 1.875rem;
+      text-align: center;
+      > div {
+        display: block;
+      }
+    }
+
+    .socials {
+      display: block;
+
+      svg {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+      > * {
+        gap: 2.5rem;
+      }
+    }
+  }
+}
+
+.connectWallet {
+  display: none;
 }
 
 .container {
@@ -21,34 +78,29 @@
   a {
     color: #606060
   }
-
-  &.navOpen {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-  }
-}
-
-.connectWallet {
-  display: none;
 }
 
 @media (width >= v.$breakpoint-tablet) {
   .root {
-    height: 5.5625rem;
-    position: relative;
+    height: 4.5rem; /* 72px Tablet = Offset top + Height  */
 
     .containerWrapper {
-      position: absolute;
-      left: 0;
-      bottom: 1.0625rem;
-      width: 100%;
+      position: relative;
+      top: 0.9375rem;
+      padding-top: 1.0625rem;
+      padding-bottom: 1.0625rem;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+
+    &:before {
+      display: none;
     }
 
     &.sticky {
       .containerWrapper {
-        padding-top: 1.0625rem;
-        padding-bottom: 1.0625rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
         bottom: auto;
         box-shadow: 0 0 30px rgba(120,120,120,0.2);
         border-bottom-left-radius: 20px;
@@ -76,6 +128,7 @@
 
   .connectWallet {
     display: block;
+    position: static;
     font-size: 0.71875rem;
     > div {
       padding: 0.6875rem 1rem;
@@ -85,7 +138,20 @@
 
 @media (width >= v.$breakpoint-desktop) {
   .root {
-    height: 7.25rem
+    height: 6.25rem;
+
+    .containerWrapper {
+      position: relative;
+      top: 1.8125rem;
+      padding-top: 1.0625rem;
+      padding-bottom: 1.0625rem;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+
+    &:before {
+      display: none;
+    }
   }
 
   .nav {
@@ -98,9 +164,14 @@
 
   .connectWallet {
      display: block;
+     position: static;
      font-size: 1rem;
      > div {
       padding: 1rem 1.5625rem;
     }
   }
+}
+
+.socials {
+  display: none;
 }
