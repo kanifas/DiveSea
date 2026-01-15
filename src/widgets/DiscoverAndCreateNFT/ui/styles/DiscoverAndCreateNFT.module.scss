@@ -25,6 +25,12 @@
     }
   }
 
+  @media (width < v.$breakpoint-tablet) {
+    .buttons {
+      font-size: 0.72875rem;
+    }
+  }
+
   .container {
     display: flex;
     flex-direction: column;
@@ -178,7 +184,7 @@
         width: 50%;
         min-width: 375px;
         box-sizing: border-box;
-        padding-right: 3rem;
+        margin-right: 3rem;
 
         .mainCaption {
           margin-bottom: 0.5rem;
