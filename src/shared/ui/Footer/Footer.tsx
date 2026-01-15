@@ -5,7 +5,9 @@ const Footer = () => {
   return (
     <div className={styles.root}>
       <div className={styles.topSection}>
-        <Logo invert adaptive={false} />
+        <div className={styles.logo}>
+          <Logo invert adaptive={false} />
+        </div>
         <nav className={styles.nav}>
           <a href="/privacy">Privacy Policy</a>
           <a href="/conditions">Term & Conditions</a>

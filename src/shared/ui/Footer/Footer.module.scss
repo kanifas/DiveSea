@@ -63,7 +63,7 @@
 
   @media (width >= v.$breakpoint-tablet) {
     flex-direction: row;
-    gap: 3.125rem;
+    gap: 4.8vw;
     font-size: 0.7925rem;
     padding: 0;
   }
@@ -82,5 +82,11 @@
 
   @media (width >= v.$breakpoint-tablet) {
     position: static;
+  }
+}
+
+@media (width >= v.$breakpoint-tablet) and (width < 760px) {
+  .logo svg + div {
+    display: none;
   }
 }
