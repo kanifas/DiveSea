@@ -18,5 +18,6 @@ export const useAppDispatch = useDispatch.withTypes<AppDispatch>()
 export const useAppSelector = useSelector.withTypes<RootState>()
 
 export { toggleIsNavMenu } from './slices/uiSlice'
+export { fetchNftsThunk } from './slices/nftSlice'
 
 export default store

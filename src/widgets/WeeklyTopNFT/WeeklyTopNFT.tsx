@@ -1,9 +1,20 @@
+import { useEffect } from 'react';
+import { useAppDispatch, useAppSelector, fetchNftsThunk  } from '@/shared/lib/redux/store'
 import { Font, NftCard, InfiniteSlider } from '@/shared/ui'
 import styles from './ui/styles/WeeklyTopNFT.module.scss'
+import Skeleton from '@/shared/ui/NftCard/components/Skeleton/Skeleton'
 
 const exp = Date.now() + 10000;
 
 const WeeklyTopNFT = () => {
+  const dispatch = useAppDispatch()
+  const { items, loading, error } = useAppSelector(state => state.nft)
+
+  useEffect(() => {
+    dispatch(fetchNftsThunk())
+  }, [dispatch])
+
+  console.log(error, 11)
 
   return (
     <div className={styles.root}>
@@ -13,19 +24,36 @@ const WeeklyTopNFT = () => {
         </Font>
       </h2>
 
-      <div className={styles.container}>
+      {loading && (
+        <div className={styles.placeholder}>
+          {[1,2,3].map((i) => (
+            <Skeleton key={i} />
+          ))}
+        </div>
+      )}
 
-      </div>
+      {error && (
+        <div style={{textAlign: 'center'}}>
+          Something went wrong <br />
+          Has not data
+        </div>
+      )}
 
-      <InfiniteSlider>
-        <NftCard name='1. Autoglyphs' bid={1.5} expire={exp} image='/static/images/im1.jpg'  />
-        <NftCard name='2. MoonCats - Acclimated' bid={2.3} expire={exp} image='/static/images/im2.jpg' />
-        <NftCard name='3. Beranames' bid={0.8} expire={exp} image='/static/images/im3.jpg' />
-        <NftCard name='4. Bitcoin' bid={1.5} expire={exp} image='/static/images/im4.jpg'  />
-        <NftCard name='5. Ripple XRP' bid={2.3} expire={exp} image='/static/images/im5.jpg' />
-        <NftCard name='6. Solana' bid={0.8} expire={exp} image='/static/images/im2.jpg' />
-        <NftCard name='7. Switch' bid={1.5} expire={exp} image='/static/images/im5.jpg'  />
-      </InfiniteSlider>
+      {!loading && !error && items && items.length > 0 && (
+        <InfiniteSlider>
+          {items.map(({ name, id }) => {
+            return (
+              <NftCard
+                key={id}
+                name={name}
+                bid={1.5}
+                expire={exp}
+                image='/static/images/im1.jpg'
+              />
+            )
+          })}
+        </InfiniteSlider>
+      )}
     </div>
   )
 }

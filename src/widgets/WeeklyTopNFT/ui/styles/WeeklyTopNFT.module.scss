@@ -26,4 +26,14 @@
       margin-bottom: 4.375rem;
     }
   }
+
+  .placeholder {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+
+    @media (width >= v.$breakpoint-desktop) {
+      gap: 2.5rem;
+    }
+  }
 }

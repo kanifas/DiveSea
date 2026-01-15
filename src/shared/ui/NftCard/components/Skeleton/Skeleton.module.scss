@@ -1,0 +1,27 @@
+@use '@/shared/ui/styles/variables.scss' as v;
+
+.skeleton {
+  width: 13.125rem;
+  min-width: 13.125rem;
+  height: 18.375rem;
+  border-radius: 18px;
+  animation: colorChange 1s infinite linear;
+
+  @media (width >= v.$breakpoint-desktop) {
+    width: 17.5rem;
+    min-width: 17.5rem;
+    height: 24.6875rem;
+  }
+}
+
+@keyframes colorChange {
+  0% {
+    background-color: #bdbdbd;
+  }
+  50% {
+    background-color: #eaeaea;
+  }
+  100% {
+    background-color: #bdbdbd;
+  }
+}

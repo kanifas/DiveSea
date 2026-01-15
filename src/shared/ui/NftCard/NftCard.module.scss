@@ -49,13 +49,17 @@
     }
   }
 
-
-
   .name {
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
     color: #363638;
     font-size: 1rem;
     line-height: 1.125rem;
     margin-bottom: auto;
+
     @media (width >= v.$breakpoint-desktop) {
       font-size: 1.375rem;
       line-height: 1;

@@ -1,5 +1,7 @@
 import { createSlice, createAsyncThunk, /*PayloadAction*/ } from '@reduxjs/toolkit'
 
+const API_URL = import.meta.env.VITE_API_URL
+
 export interface nftState {
   items: Array<{id: string, name: string}>
   loading: boolean
@@ -14,17 +16,22 @@ const initialState: nftState = {
 
 export const fetchNftsThunk = createAsyncThunk(
   'nfts/fetchNfts',
-  async ( _, thunkAPI) => {
+  async (/*_, thunkAPI*/) => {
     try {
-      const response = await fetch('https://api.coingecko.com/api/v3/nfts/list')
-
+      const response = await fetch(API_URL)
       if (!response.ok) {
-        return thunkAPI.rejectWithValue('Failed to fetch nfts list (https://api.coingecko.com/api/v3/nfts/list)')
+        const errorBody = await response.text();
+        throw new Error(errorBody || response.statusText)
       }
       const data = await response.json();
       return data
-    } catch (error) {
-      thunkAPI.rejectWithValue(error)
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        throw new Error(error.message)
+      } else {
+        throw new Error('Something went wrong')
+      }
+      // thunkAPI.rejectWithValue(error)
     }
   }
 )
@@ -45,7 +52,7 @@ export const nftSlice = createSlice({
       })
       .addCase(fetchNftsThunk.rejected, (state, action) => {
         state.loading = false
-        state.error = action.error.message || 'Something went wrong'
+        state.error = action.error.message
       })
   }
 })
