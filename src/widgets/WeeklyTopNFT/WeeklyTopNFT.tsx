@@ -4,8 +4,6 @@ import { Font, NftCard, InfiniteSlider } from '@/shared/ui'
 import styles from './ui/styles/WeeklyTopNFT.module.scss'
 import Skeleton from '@/shared/ui/NftCard/components/Skeleton/Skeleton'
 
-const exp = Date.now() + 10000;
-
 const WeeklyTopNFT = () => {
   const dispatch = useAppDispatch()
   const { items, loading, error } = useAppSelector(state => state.nft)
@@ -13,8 +11,6 @@ const WeeklyTopNFT = () => {
   useEffect(() => {
     dispatch(fetchNftsThunk())
   }, [dispatch])
-
-  console.log(error, 11)
 
   return (
     <div className={styles.root}>
@@ -41,14 +37,14 @@ const WeeklyTopNFT = () => {
 
       {!loading && !error && items && items.length > 0 && (
         <InfiniteSlider>
-          {items.map(({ name, id }) => {
+          {items.map(({ name, id, expire, bid, image }) => {
             return (
               <NftCard
                 key={id}
                 name={name}
-                bid={1.5}
-                expire={exp}
-                image='/static/images/im1.jpg'
+                bid={bid}
+                expire={expire}
+                image={image}
               />
             )
           })}

@@ -2,8 +2,16 @@ import { createSlice, createAsyncThunk, /*PayloadAction*/ } from '@reduxjs/toolk
 
 const API_URL = import.meta.env.VITE_API_URL
 
+interface Item {
+  id: string
+  name: string
+  image: string
+  expire: number
+  bid: number
+}
+
 export interface nftState {
-  items: Array<{id: string, name: string}>
+  items: Item[]
   loading: boolean
   error: undefined | string
 }
@@ -12,6 +20,22 @@ const initialState: nftState = {
   items: [],
   loading: false,
   error: undefined,
+}
+
+const createDto = (items: Item[]) => {
+  return items.map(({ id, name }) => {
+    const imageNumber = Math.floor(Math.random() * 5) + 1
+    const bid = Number(((Math.floor(Math.random() * 2) + 1) + Math.random()).toFixed(2))
+    const countdownHoursCount = (Math.floor(Math.random() * 5) + 1) * 3600000
+    const expire = Date.now() + countdownHoursCount
+    return {
+      id,
+      name,
+      bid,
+      expire,
+      image: `/static/images/im${imageNumber}.jpg`,
+    }
+  })
 }
 
 export const fetchNftsThunk = createAsyncThunk(
@@ -24,7 +48,7 @@ export const fetchNftsThunk = createAsyncThunk(
         throw new Error(errorBody || response.statusText)
       }
       const data = await response.json();
-      return data
+      return createDto(data)
     } catch (error: unknown) {
       if (error instanceof Error) {
         throw new Error(error.message)

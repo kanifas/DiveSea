@@ -1,4 +1,3 @@
-import { Dayjs } from 'dayjs'
 import type { FC } from 'react'
 import styles from './NftCard.module.scss'
 import { Font } from '@/shared/ui'
@@ -7,7 +6,7 @@ import Expire from './components/Expire/Expire'
 interface IProps {
   name: string
   bid: number
-  expire?: Dayjs | number /* Dayjs or timestamp */
+  expire: number
   image: string
 }
 
@@ -17,13 +16,11 @@ const NftCard:FC<IProps> = ({
   image,
   expire,
 }) => {
-
-  let expireDate
   return (
     <div className={styles.root}>
       <div className={styles.card}>
         <div className={styles.expire}>
-          <Expire />
+          <Expire timestamp={expire} />
         </div>
         <div className={styles.image}>
           <img src={image} />
