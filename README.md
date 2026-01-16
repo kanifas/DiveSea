@@ -18,7 +18,7 @@ npm run dev
 npm run build
 npm run preview
 ```
-Будет доступно на [http://localhost:5173](http://localhost:4173)
+Будет доступно на [http://localhost:4173](http://localhost:4173)
 
 
 ### Запуск в контейнере
