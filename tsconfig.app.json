@@ -15,6 +15,7 @@
     "moduleDetection": "force",
     "noEmit": true,
     "jsx": "react-jsx",
+    // "allowJs": true,
 
     /* Linting */
     "strict": true,
@@ -29,5 +30,6 @@
       // "@components/*": ["src/components/*"]
     }
   },
-  "include": ["src", "src/**/*"]
+  "include": ["src", "src/**/*"],
+  "exclude": ["src/shared/ui/InfiniteSlider/helpers/horizontalLoop.ts"]
 }

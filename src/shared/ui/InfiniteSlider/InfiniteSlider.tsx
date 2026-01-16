@@ -15,7 +15,7 @@ import {
   useEffect
 } from 'react'
 
-import horizontalLoop from './helpers/horizontalLoop.js'
+import horizontalLoop from './helpers/horizontalLoop'
 
 import styles from './InfiniteSlider.module.scss'
 
@@ -35,20 +35,6 @@ const InfiniteSlider:FC<IProps> = ({ children }) => {
   const prevRef = useRef<HTMLDivElement>(null)
   const nextRef = useRef<HTMLDivElement>(null)
 
-  // const childRefs = useRef([])
-  // Function to get valid React elements and assign refs
-  // const childrenWithRefs = Children.map(children, (child, index) => {
-  //   // Only process valid React elements (ignores null, strings, etc. if not wrapped)
-  //   if (isValidElement(child)) {
-  //     return cloneElement(child, {
-  //       ref: (domNode) => {
-  //         childRefs.current[index] = domNode
-  //       }
-  //     });
-  //   }
-  //   return child
-  // })
-
   useEffect(() => {
     if (!isMounted) {
       const boxes = containerRef.current && containerRef.current.childNodes
@@ -67,12 +53,14 @@ const InfiniteSlider:FC<IProps> = ({ children }) => {
           activeElement = element
         }
       }, gsap, Draggable, InertiaPlugin);
-
+      // @ts-expect-error external lib
       boxes.forEach((box, i) => box.addEventListener("click", () => loop.toIndex(i, {duration: 0.8, ease: "power1.inOut"})));
       if (nextRef && nextRef.current) {
+        // @ts-expect-error external lib
         nextRef.current.addEventListener("click", () => loop.next({duration: 0.4, ease: "power1.inOut"}))
       }
       if (prevRef && prevRef.current) {
+        // @ts-expect-error external lib
         prevRef.current.addEventListener("click", () => loop.previous({duration: 0.4, ease: "power1.inOut"}))
       }
 

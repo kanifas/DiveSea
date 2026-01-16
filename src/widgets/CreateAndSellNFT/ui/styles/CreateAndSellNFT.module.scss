@@ -88,8 +88,11 @@
     }
 
     @media (width >= 670px) {
-      margin-right: 50vw;
       text-align: left;
+    }
+
+    @media (width > 670px) and (width < 745px) {
+      margin-right: 53%;
     }
   }
 
