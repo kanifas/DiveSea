@@ -23,13 +23,13 @@ npm run preview
 
 ### Запуск в контейнере
 ```
-sudo docker build -t div-sea-app .
-docker run -p 80:80 div-sea-app
+sudo docker build -t dive-sea-app .
+docker run -p 80:80 dive-sea-app
 ```
 Будет доступно на [http://localhost](http://localhost)
 
 Если по какой-то причине порт 80 уже занят, то поменять на другой, например 8000
 ```
-docker run -p 8000:80 div-sea-app
+docker run -p 8000:80 dive-sea-app
 ```
 Будет доступно на [http://localhost:8000](http://localhost:8000)
