@@ -126,7 +126,17 @@
     flex-direction: row;
     font-size: 0.875rem;
     margin-left: 2.5rem;
-    gap: 2rem;
+    gap: calc(32px - 1.8rem);
+    a {
+      display: block;
+      padding: 0.3rem 0.9rem;
+      border-radius: 0.625rem;
+      transition: all 0.2s linear;
+    }
+    a:hover {
+      background: #c3c3c3;
+      color: #000;
+    }
   }
 
   .burger {
@@ -166,7 +176,17 @@
     flex-direction: row;
     font-size: 1.125rem;
     margin-left: 4.125rem;
-    gap: 3.125rem;
+    gap: 10px;
+    a {
+      display: block;
+      padding: 0.5rem 1.25rem;
+      border-radius: 0.625rem;
+      transition: all 0.2s linear;
+    }
+    a:hover {
+      background: #c3c3c3;
+      color: #000;
+    }
   }
 
   .connectWallet {
